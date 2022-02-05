@@ -1,0 +1,1 @@
+A shared wallet in solidity in which people who are added as users can withdraw 1 ether
