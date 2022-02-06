@@ -4,9 +4,13 @@ pragma solidity 0.8.0;
 import "https://github.com/OpenZeppelin/openzeppelin-contracts/blob/master/contracts/access/Ownable.sol";
 
 contract Allowance is Ownable{
+    event AllowanceAdded(address indexed _to, uint _value, uint _newValue);
+    event AllowanceSent(address indexed _by, address indexed _to, uint _value);
+
     mapping(address => uint) public allowanceMapping;
 
     function addAllowanceUser(address _user, uint _value) public onlyOwner {
+        emit AllowanceAdded(_user, _value, allowanceMapping[_user]);
         allowanceMapping[_user] = _value;
     }
 
@@ -16,11 +20,15 @@ contract Allowance is Ownable{
     }
 
     function reduceAllowance(address _allowanceUser, uint _allowanceUsed) internal{
+        emit AllowanceSent(msg.sender ,_allowanceUser, _allowanceUsed);
         allowanceMapping[_allowanceUser] -= _allowanceUsed;
     }
 }
 
 contract SharedWallet is Allowance {
+
+    event MoneySent(address indexed _beneficiary, uint _amount);
+    event MoneyRecieved(address indexed _from, uint _amount);
     
 
     function withdraw(address payable _to, uint _value) public allownaceOrOwner(_value) {
@@ -28,10 +36,13 @@ contract SharedWallet is Allowance {
         if(owner() != msg.sender){
             reduceAllowance(msg.sender, _value);
         }
+        emit MoneySent(_to, _value);
         _to.transfer(_value);
     }
 
     fallback() external { }
 
-    receive() external payable { }
+    receive() external payable {
+        emit MoneyRecieved(msg.sender, msg.value);
+    }
 }
