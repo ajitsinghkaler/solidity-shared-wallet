@@ -1,34 +1,23 @@
-pragma solidity 0.6.0;
+// SPDX-License-Identifier: MIT
+pragma solidity 0.8.0;
 
-contract SharedWallet {
-    address owner;
-    constructor() public {
-        owner = msg.sender;
+import "https://github.com/OpenZeppelin/openzeppelin-contracts/blob/master/contracts/access/Ownable.sol";
+
+contract SharedWallet is Ownable {
+    mapping(address => uint) public allowanceMapping;
+
+    function addAllowanceUser(address _user, uint _value) public onlyOwner {
+        allowanceMapping[_user] = _value;
     }
-    mapping(address => bool) public allowanceMapping;
 
-    modifier onlyOwner () {
-        require(msg.sender == owner, "You are not the owner only owner can perfor certain actions");
+    modifier allownaceOrOwner(uint _amount){
+        require(owner() == _msgSender() || allowanceMapping[_msgSender()] >=_amount, "the specified requst cannot be fulfilled");
         _;
     }
 
-
-    function getMyBalance() public view returns (uint) {
-        return address(this).balance; 
-    }
-
-    function addAllowanceUser(address user) public onlyOwner {
-        allowanceMapping[user] = true;
-    }
-
-    function withdrawAllowance() public{
-        require( allowanceMapping[msg.sender], "You are not registered by owner for allowance");
-        payable(msg.sender).transfer(1 ether);
-
-    }
-
-    function withdraw(uint _ethValue, address payable _withdrawAddress) public onlyOwner {
-        _withdrawAddress.transfer(_ethValue);
+    function withdraw(address payable _to, uint _value) public allownaceOrOwner(_value) {
+        _to.transfer(_value);
+        
     }
 
     fallback() external { }
