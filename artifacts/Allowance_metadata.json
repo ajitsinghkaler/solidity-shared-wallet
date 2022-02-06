@@ -168,7 +168,7 @@
 	},
 	"settings": {
 		"compilationTarget": {
-			"Shared wallet.sol": "Allowance"
+			"localhost/Allowance.sol": "Allowance"
 		},
 		"evmVersion": "istanbul",
 		"libraries": {},
@@ -182,14 +182,6 @@
 		"remappings": []
 	},
 	"sources": {
-		"Shared wallet.sol": {
-			"keccak256": "0xeef64e84a402d86feda60a53fe0b1a9afe9a1eb7bf077a80b8daef2554401cbe",
-			"license": "MIT",
-			"urls": [
-				"bzz-raw://997068402df1f3601fdeaee58e43c39cd3562f854f2724396815d97821c52050",
-				"dweb:/ipfs/QmcmWnvdVs5YPybD4C16hpU4ysoybN2iKLvHyA1kMfdUKr"
-			]
-		},
 		"https://github.com/OpenZeppelin/openzeppelin-contracts/blob/master/contracts/access/Ownable.sol": {
 			"keccak256": "0x24e0364e503a9bbde94c715d26573a76f14cd2a202d45f96f52134ab806b67b9",
 			"license": "MIT",
@@ -204,6 +196,14 @@
 			"urls": [
 				"bzz-raw://6df0ddf21ce9f58271bdfaa85cde98b200ef242a05a3f85c2bc10a8294800a92",
 				"dweb:/ipfs/QmRK2Y5Yc6BK7tGKkgsgn3aJEQGi5aakeSPZvS65PV8Xp3"
+			]
+		},
+		"localhost/Allowance.sol": {
+			"keccak256": "0xbfddc1c842a200f6e756eb33cdcf27e75132dfd30b46ecfaeeb9682db51cdd87",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://a7b16780197cd905b7dd42e3e935e65741307d92bd830836f950b51ef9437a28",
+				"dweb:/ipfs/QmcKbVAAecaPd27N5Rpp2Ffv5cxnU5vZ4BpDKemS1t1ivi"
 			]
 		}
 	},

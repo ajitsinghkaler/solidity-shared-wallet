@@ -246,12 +246,20 @@
 		"remappings": []
 	},
 	"sources": {
-		"Shared wallet.sol": {
-			"keccak256": "0xeef64e84a402d86feda60a53fe0b1a9afe9a1eb7bf077a80b8daef2554401cbe",
+		"Allowance.sol": {
+			"keccak256": "0xbfddc1c842a200f6e756eb33cdcf27e75132dfd30b46ecfaeeb9682db51cdd87",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://997068402df1f3601fdeaee58e43c39cd3562f854f2724396815d97821c52050",
-				"dweb:/ipfs/QmcmWnvdVs5YPybD4C16hpU4ysoybN2iKLvHyA1kMfdUKr"
+				"bzz-raw://a7b16780197cd905b7dd42e3e935e65741307d92bd830836f950b51ef9437a28",
+				"dweb:/ipfs/QmcKbVAAecaPd27N5Rpp2Ffv5cxnU5vZ4BpDKemS1t1ivi"
+			]
+		},
+		"Shared wallet.sol": {
+			"keccak256": "0xc62eab94b5f1471ba942923e90090ce1b97a1114b40eaded9305d1073e0a47d6",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://6510868b3091add767ae6e662c805cc0ca0b1d0af45836aa629f3b24d7aeadd1",
+				"dweb:/ipfs/QmfGn9VP6HBdsvbHWdd8DqjAxtc3E2tSSAjVCmt3ZrcX7S"
 			]
 		},
 		"https://github.com/OpenZeppelin/openzeppelin-contracts/blob/master/contracts/access/Ownable.sol": {
