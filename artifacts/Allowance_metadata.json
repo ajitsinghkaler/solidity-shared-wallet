@@ -25,10 +25,6 @@
 				"type": "event"
 			},
 			{
-				"stateMutability": "nonpayable",
-				"type": "fallback"
-			},
-			{
 				"inputs": [
 					{
 						"internalType": "address",
@@ -97,28 +93,6 @@
 				"outputs": [],
 				"stateMutability": "nonpayable",
 				"type": "function"
-			},
-			{
-				"inputs": [
-					{
-						"internalType": "address payable",
-						"name": "_to",
-						"type": "address"
-					},
-					{
-						"internalType": "uint256",
-						"name": "_value",
-						"type": "uint256"
-					}
-				],
-				"name": "withdraw",
-				"outputs": [],
-				"stateMutability": "nonpayable",
-				"type": "function"
-			},
-			{
-				"stateMutability": "payable",
-				"type": "receive"
 			}
 		],
 		"devdoc": {
@@ -144,7 +118,7 @@
 	},
 	"settings": {
 		"compilationTarget": {
-			"Shared wallet.sol": "SharedWallet"
+			"Shared wallet.sol": "Allowance"
 		},
 		"evmVersion": "istanbul",
 		"libraries": {},
@@ -159,11 +133,11 @@
 	},
 	"sources": {
 		"Shared wallet.sol": {
-			"keccak256": "0x77c66bb31ab11acf8d7e4b23bed8c9ecf619ed4200c31981f9efb77e1aa12083",
+			"keccak256": "0xfa84c130a3740d782794580fa027f29376b553c1cb1e7bcb3ad324a2ed16fc08",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://aa286bc19c7a5d109218b8c74372a5345cc9028f38550051ab0699779cfb484f",
-				"dweb:/ipfs/QmRZJMuketjWbprzjP1EnHPTJb4LApdwZsxRqYFt8Jujh6"
+				"bzz-raw://22ca3b4a78c70decb5da545d790077287595f10097feaa5f5aa77038dbb4ffd6",
+				"dweb:/ipfs/QmQxc45HdP8NieKvHLBiDV5JnEwnFB73NYwfsQQ6DSuH64"
 			]
 		},
 		"https://github.com/OpenZeppelin/openzeppelin-contracts/blob/master/contracts/access/Ownable.sol": {

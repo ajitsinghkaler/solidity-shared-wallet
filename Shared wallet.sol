@@ -11,13 +11,20 @@ contract SharedWallet is Ownable {
     }
 
     modifier allownaceOrOwner(uint _amount){
-        require(owner() == _msgSender() || allowanceMapping[_msgSender()] >=_amount, "the specified requst cannot be fulfilled");
+        require(owner() == msg.sender || allowanceMapping[msg.sender] >=_amount, "the specified requst cannot be fulfilled");
         _;
     }
 
+    function reduceAllowance(address _allowanceUser, uint _allowanceUsed) internal{
+        allowanceMapping[_allowanceUser] -= _allowanceUsed;
+    }
+
     function withdraw(address payable _to, uint _value) public allownaceOrOwner(_value) {
+        require(_value <= address(this).balance, "There are not enough funds in the contract");
+        if(owner() != msg.sender){
+            reduceAllowance(msg.sender, _value);
+        }
         _to.transfer(_value);
-        
     }
 
     fallback() external { }
