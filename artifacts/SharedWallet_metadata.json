@@ -113,10 +113,10 @@
 	},
 	"sources": {
 		"Shared wallet.sol": {
-			"keccak256": "0xc2ed7aabab34bde01261e83d94d5b88ff5f6004ce729849c85e3aae559ecdc38",
+			"keccak256": "0x7e14d4b9030cb7135c292c9799eaa7ac84efdf85b90f2de94b26efeb99f26794",
 			"urls": [
-				"bzz-raw://c61d5bcdc8af647189958c6bc0ad2ee41fa9dbaff69b74fffdd634dee5029e58",
-				"dweb:/ipfs/QmdaX2xWmpVeYd1oZUpqLund4ovSyuZUn1gr1HrkFNnfsW"
+				"bzz-raw://36f6be6e381450b12cb2b5af92bd616787a778ce6fdf903738f312ea52267435",
+				"dweb:/ipfs/QmT6wWaiDnUWzSR66hBZWtR8ZymGmxUcscUJ8qRo9ztLuf"
 			]
 		}
 	},

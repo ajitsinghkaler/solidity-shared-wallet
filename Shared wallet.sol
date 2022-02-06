@@ -7,14 +7,17 @@ contract SharedWallet {
     }
     mapping(address => bool) public allowanceMapping;
 
+    modifier onlyOwner () {
+        require(msg.sender == owner, "You are not the owner only owner can perfor certain actions");
+        _;
+    }
 
 
     function getMyBalance() public view returns (uint) {
         return address(this).balance; 
     }
 
-    function addAllowanceUser(address user) public {
-        require(msg.sender == owner, "You are not the owner only owner can add allowance user");
+    function addAllowanceUser(address user) public onlyOwner {
         allowanceMapping[user] = true;
     }
 
@@ -24,8 +27,7 @@ contract SharedWallet {
 
     }
 
-    function withdraw(uint _ethValue, address payable _withdrawAddress) public {
-        require(msg.sender == owner, "You are not the owner only owner can withdraw");
+    function withdraw(uint _ethValue, address payable _withdrawAddress) public onlyOwner {
         _withdrawAddress.transfer(_ethValue);
     }
 
