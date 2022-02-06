@@ -5,21 +5,12 @@ contract SharedWallet {
     constructor() public {
         owner = msg.sender;
     }
-    uint private balanceRecieved;
-    mapping(address=> bool) public allowanceMapping;
+    mapping(address => bool) public allowanceMapping;
 
 
-    function deposit() public payable {
-        balanceRecieved += msg.value;
-    }
 
     function getMyBalance() public view returns (uint) {
         return address(this).balance; 
-    }
-
-    function withdrawAll() public{
-        require(msg.sender == owner, "You are not the owner only owner can withdra all funds");
-        payable(owner).transfer(address(this).balance);
     }
 
     function addAllowanceUser(address user) public {
@@ -32,4 +23,13 @@ contract SharedWallet {
         payable(msg.sender).transfer(1 ether);
 
     }
+
+    function withdraw(uint _ethValue, address payable _withdrawAddress) public {
+        require(msg.sender == owner, "You are not the owner only owner can withdraw");
+        _withdrawAddress.transfer(_ethValue);
+    }
+
+    fallback() external { }
+
+    receive() external payable { }
 }

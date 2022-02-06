@@ -11,6 +11,10 @@
 				"type": "constructor"
 			},
 			{
+				"stateMutability": "nonpayable",
+				"type": "fallback"
+			},
+			{
 				"inputs": [
 					{
 						"internalType": "address",
@@ -44,13 +48,6 @@
 			},
 			{
 				"inputs": [],
-				"name": "deposit",
-				"outputs": [],
-				"stateMutability": "payable",
-				"type": "function"
-			},
-			{
-				"inputs": [],
 				"name": "getMyBalance",
 				"outputs": [
 					{
@@ -63,8 +60,19 @@
 				"type": "function"
 			},
 			{
-				"inputs": [],
-				"name": "withdrawAll",
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "_ethValue",
+						"type": "uint256"
+					},
+					{
+						"internalType": "address payable",
+						"name": "_withdrawAddress",
+						"type": "address"
+					}
+				],
+				"name": "withdraw",
 				"outputs": [],
 				"stateMutability": "nonpayable",
 				"type": "function"
@@ -75,6 +83,10 @@
 				"outputs": [],
 				"stateMutability": "nonpayable",
 				"type": "function"
+			},
+			{
+				"stateMutability": "payable",
+				"type": "receive"
 			}
 		],
 		"devdoc": {
@@ -101,10 +113,10 @@
 	},
 	"sources": {
 		"Shared wallet.sol": {
-			"keccak256": "0xbfb725af995907438572b6cf1f7b4aa73635c6817f5e07bb5ed102e2bc3e0219",
+			"keccak256": "0xc2ed7aabab34bde01261e83d94d5b88ff5f6004ce729849c85e3aae559ecdc38",
 			"urls": [
-				"bzz-raw://9778b1e793e310fea3cd3523b06269ec0d1e1418714222f4b3bace8c37b70b3a",
-				"dweb:/ipfs/QmUyZJ2312s7jkgsLnggFeGsED3P6hfKhgPciiiDAKEsxM"
+				"bzz-raw://c61d5bcdc8af647189958c6bc0ad2ee41fa9dbaff69b74fffdd634dee5029e58",
+				"dweb:/ipfs/QmdaX2xWmpVeYd1oZUpqLund4ovSyuZUn1gr1HrkFNnfsW"
 			]
 		}
 	},
